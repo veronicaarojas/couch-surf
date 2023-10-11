@@ -1,4 +1,6 @@
 const reviewTotalDisplay = document.querySelector('#reviews')
+const returningUserDisplay = document.querySelector('#returning-user')
+const userNameDisplay = document.querySelector('#user')
 
 const reviews = [
     {
@@ -22,8 +24,9 @@ const reviews = [
 ]
 
 // Solution
-function showReviewTotal (value : number, name: string) {
-    reviewTotalDisplay.innerHTML = 'review total' + value.toString() + '| last reviewer:' + name
+function showReviewTotal (value : number, name: string, isLoyalty: boolean) {
+  const iconDisplay = isLoyalty ? "⭐" : ""
+    reviewTotalDisplay.innerHTML = 'review total' + value.toString() + '| last reviewer:' + name + iconDisplay
 }
 
 showReviewTotal(reviews.length, recentReviewer(reviews).name, recentReviewer(reviews).loyaltyUser)
@@ -33,8 +36,26 @@ function recentReviewer(reviews : any) {
         const dateA : any = new Date(a.date);
         const dateB : any = new Date(b.date);
         
-        return dateA - dateB
+        return dateA - dateB;
     });
     
-    return reviews[0]
+    return reviews[0];
+
+
 }
+
+const you = {
+  userName: {firstName: 'Bobby', lastName: 'Brown'},
+  isReturning: true,
+}
+
+
+function populateUser(isReturning : boolean, userName : string ) {
+  if (isReturning){
+      returningUserDisplay.innerHTML = 'back'
+  }
+  userNameDisplay.innerHTML = userName
+}
+
+populateUser(you.isReturning, you.userName.firstName)
+
