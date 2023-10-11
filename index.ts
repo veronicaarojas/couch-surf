@@ -23,5 +23,18 @@ const reviews = [
 
 // Solution
 function showReviewTotal (value : number) {
-    reviewTotalDisplay.innerHTML = value
+    reviewTotalDisplay.innerHTML = value.toString()
+}
+
+showReviewTotal(reviews.length, recentReviewer(reviews))
+
+function recentReviewer(reviews : any) {
+    reviews.sort((a : any, b : any) => {
+        const dateA : any = new Date(a.date);
+        const dateB : any = new Date(b.date);
+        
+        return dateA - dateB
+    });
+    
+    return reviews[0].name
 }
