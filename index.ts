@@ -64,17 +64,42 @@ isAvailiable: boolean;
 }[] = [
   {
     image: "",
-    title : "",
-    price: 1,
+    title : "London Flat",
+    price: 17,
     location: {
-      firstLine: "",
-      city: "",
-      postcode: "",
-      country: "",
+      firstLine: "New Street",
+      city: "London",
+      postcode: "W1",
+      country: "United Kingdom",
     },
-    contact: "",
+    contact: "londonflat@couchsurf.com",
     isAvailiable: true
-
+  },
+  {
+    image: "",
+    title : "Marbella Apartment",
+    price: 20,
+    location: {
+      firstLine: "Main Road",
+      city: "Marbella",
+      postcode: "E12",
+      country: "Spain",
+    },
+    contact: "marbellaapartment@couchsurf.com",
+    isAvailiable: true
+  },
+  {
+    image: "",
+    title : "New York Penthouse",
+    price: 30,
+    location: {
+      firstLine: "81st Street",
+      city: "New York",
+      postcode: "1234",
+      country: "United States",
+    },
+    contact: "newyorkpenthouse@couchsurf.com",
+    isAvailiable: true
   }
 ]
 
