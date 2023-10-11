@@ -44,8 +44,11 @@ function recentReviewer(reviews : any) {
 
 }
 
-const you = {
-  userName: {firstName: 'Bobby', lastName: 'Brown'},
+const you: {
+  userName: string;
+  isReturning: boolean
+} = {
+  userName: 'Bobby',
   isReturning: true,
 }
 
@@ -57,5 +60,5 @@ function populateUser(isReturning : boolean, userName : string ) {
   userNameDisplay.innerHTML = userName
 }
 
-populateUser(you.isReturning, you.userName.firstName)
+populateUser(you.isReturning, you.userName)
 
