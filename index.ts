@@ -53,10 +53,12 @@ const properties : {
 image : string;
 title : string;
 price : number;
-address : string;
-city : string;
-postcode : string;
-country: string;
+location : {
+  firstLine : string;
+  city : string;
+  postcode: string;
+  country: string;
+}
 contact: string; 
 isAvailiable: boolean;
 }[] = [
@@ -64,10 +66,12 @@ isAvailiable: boolean;
     image: "",
     title : "",
     price: 1,
-    address: "",
-    city: "",
-    postcode: "",
-    country: "",
+    location: {
+      firstLine: "",
+      city: "",
+      postcode: "",
+      country: "",
+    },
     contact: "",
     isAvailiable: true
 
