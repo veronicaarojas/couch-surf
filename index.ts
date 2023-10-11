@@ -26,7 +26,7 @@ function showReviewTotal (value : number, name: string) {
     reviewTotalDisplay.innerHTML = 'review total' + value.toString() + '| last reviewer:' + name
 }
 
-showReviewTotal(reviews.length, recentReviewer(reviews))
+showReviewTotal(reviews.length, recentReviewer(reviews).name, recentReviewer(reviews).loyaltyUser)
 
 function recentReviewer(reviews : any) {
     reviews.sort((a : any, b : any) => {
@@ -36,5 +36,5 @@ function recentReviewer(reviews : any) {
         return dateA - dateB
     });
     
-    return reviews[0].name
+    return reviews[0]
 }
