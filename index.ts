@@ -22,8 +22,8 @@ const reviews = [
 ]
 
 // Solution
-function showReviewTotal (value : number) {
-    reviewTotalDisplay.innerHTML = value.toString()
+function showReviewTotal (value : number, name: string) {
+    reviewTotalDisplay.innerHTML = 'review total' + value.toString() + '| last reviewer:' + name
 }
 
 showReviewTotal(reviews.length, recentReviewer(reviews))
