@@ -61,7 +61,7 @@ location : {
   postcode: string;
   country: string;
 }
-contact: string; 
+contact: [number, string]; 
 isAvailiable: boolean;
 }[] = [
   {
@@ -74,7 +74,7 @@ isAvailiable: boolean;
       postcode: "W1",
       country: "United Kingdom",
     },
-    contact: "londonflat@couchsurf.com",
+    contact: [ +1123495082908 ,"londonflat@couchsurf.com"],
     isAvailiable: true
   },
   {
@@ -87,7 +87,7 @@ isAvailiable: boolean;
       postcode: "E12",
       country: "Spain",
     },
-    contact: "marbellaapartment@couchsurf.com",
+    contact: [ +1123495082908 ,"marbellaapartment@couchsurf.com"],
     isAvailiable: false
   },
   {
@@ -100,7 +100,7 @@ isAvailiable: boolean;
       postcode: "1234",
       country: "United States",
     },
-    contact: "newyorkpenthouse@couchsurf.com",
+    contact: [ +1123495082908, "newyorkpenthouse@couchsurf.com"],
     isAvailiable: true
   }
 ]
