@@ -1,3 +1,5 @@
+const propertyContainer = document.querySelector('.properties');
+
 import { showReviewTotal, populateUser, recentReviewer } from "./utils";
 
 const reviews : {
@@ -86,7 +88,7 @@ isAvailiable: boolean;
       country: "Spain",
     },
     contact: "marbellaapartment@couchsurf.com",
-    isAvailiable: true
+    isAvailiable: false
   },
   {
     image: "",
@@ -106,4 +108,16 @@ isAvailiable: boolean;
 
 populateUser(you.isReturning, you.firstName);
 showReviewTotal(reviews.length, recentReviewer(reviews).name, recentReviewer(reviews).loyaltyUser);
+
+//add the properties 
+
+for(let i = 0; i < properties.length; i++) {
+  const card = document.createElement('div')
+  card.classList.add('card')
+  card.innerHTML = properties[i].title
+  const image = document.createElement('img')
+  image.setAttribute('src', properties[i].image)
+  card.appendChild(image)
+  propertyContainer?.appendChild(card)
+}
 
