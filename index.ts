@@ -1,5 +1,6 @@
-const propertyContainer = document.querySelector('.properties');
-
+const propertyContainer = document.querySelector('.properties')
+const footer = document.querySelector('.footer')
+import { Permissions } from './enums'
 import { showReviewTotal, populateUser, recentReviewer } from "./utils";
 
 const reviews : {
@@ -30,24 +31,15 @@ const reviews : {
 
 
 
-
-
-
-
-
-const you : {
-  firstName: string;
-  lastName: string;
-  isReturning: boolean;
-  age : number;
-  stayedAt: string[];
-} = {
+const you = {
   firstName: 'Bobby',
   lastName: 'Brown',
+  permissions: Permissions.ADMIN,
   isReturning: true,
   age: 23,
   stayedAt: [ 'florida-home', 'oman-flat', 'tokyo-bungalow']
 }
+
 
 //properties 
 
@@ -118,6 +110,10 @@ for(let i = 0; i < properties.length; i++) {
   const image = document.createElement('img')
   image.setAttribute('src', properties[i].image)
   card.appendChild(image)
-  propertyContainer?.appendChild(card)
+  propertyContainer.appendChild(card)
 }
+
+
+let currentLocation : [string, string, number] = [ "London", '17:47', 18 ]
+footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°C'
 
