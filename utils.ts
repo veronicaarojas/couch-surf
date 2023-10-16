@@ -21,6 +21,13 @@ export function recentReviewer(reviews : any) {
 
 }
 
+export function showDetails(authorityStatus: (boolean | Permissions), element: HTMLDivElement, price : number) {
+    if(authorityStatus) {
+      const priceDisplay = document.createElement('div')
+      priceDisplay.innerHTML = price.toString() + '/night'
+      element.appendChild(priceDisplay)
+    }}
+
 export function populateUser(isReturning : boolean, userName: string ) {
     if (isReturning == true){
         returningUserDisplay.innerHTML = 'back'

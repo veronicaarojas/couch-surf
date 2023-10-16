@@ -1,7 +1,7 @@
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
 import { Permissions, Loyalty } from './enums'
-import { showReviewTotal, populateUser, recentReviewer } from "./utils";
+import { showReviewTotal, populateUser, recentReviewer, showDetails } from "./utils";
 import { Country, Price } from './aliases';
 
 const reviews: any[] = [
@@ -101,13 +101,7 @@ showReviewTotal(reviews.length, recentReviewer(reviews).name, recentReviewer(rev
 
 
 
-function showDetails(authorityStatus: (boolean | Permissions), element: HTMLDivElement, price : number) {
-if(authorityStatus) {
-  const priceDisplay = document.createElement('div')
-  priceDisplay.innerHTML = price.toString() + '/night'
-  element.appendChild(priceDisplay)
-}
-}
+
 
 //add the properties 
 
