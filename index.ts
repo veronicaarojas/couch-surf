@@ -5,9 +5,9 @@ const container = document.querySelector('.container')
 const button = document.querySelector('button')
 import { Permissions, Loyalty } from './enums'
 import { showReviewTotal, populateUser, recentReviewer, showDetails, getTopTwoReviews } from "./utils";
-import { Country, Price } from './aliases';
+import { Property, Review } from './interfaces'
 
-const reviews: any[] = [
+const reviews: Review[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -25,7 +25,6 @@ const reviews: any[] = [
         stars: 4,
         loyaltyUser: Loyalty.BRONZE_USER,
         date: '27-03-2021',
-        description: "Good location, kind host. Area was a bit quiet."
     },
 ]
 
@@ -44,19 +43,7 @@ const you = {
 
 //properties 
 
-const properties : {
-image : string;
-title : string;
-price : Price;
-location : {
-  firstLine : string;
-  city : string;
-  postcode: string;
-  country: Country;
-}
-contact: [number, string]; 
-isAvailiable: boolean;
-}[] = [
+const properties : Property[] = [
   {
     image: "",
     title : "London Flat",
@@ -115,17 +102,12 @@ for(let i = 0; i < properties.length; i++) {
   const image = document.createElement('img')
   image.setAttribute('src', properties[i].image)
   card.appendChild(image)
-  propertyContainer.appendChild(card)
   showDetails(you.permissions, card, properties[i].price)
+  propertyContainer.appendChild(card)
 }
 
 let count = 0
-function addReviews(array: {
-    name: string;
-    stars: number;
-    loyaltyUser: Loyalty;
-    date: string;
-}[]) : void {
+function addReviews(array: Review[]) : void {
     if (!count ) {
         count++
         const topTwo = getTopTwoReviews(array)
