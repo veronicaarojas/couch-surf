@@ -34,3 +34,9 @@ export function populateUser(isReturning : boolean, userName: string ) {
     }
     userNameDisplay.innerHTML = userName
 }
+
+export function makeMultiple(value: number) {
+    if (value > 1) {
+        return 's'
+    } else return ''
+}
