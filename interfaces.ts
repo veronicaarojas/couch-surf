@@ -10,9 +10,9 @@ export interface Review {
 
 export interface Property {
   image : string;
-title : string;
-price : Price;
-location : {
+  title : string;
+  price : Price;
+  location : {
   firstLine : string;
   city : string;
   postcode: string;
