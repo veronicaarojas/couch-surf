@@ -2,6 +2,7 @@ const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
 import { Permissions, Loyalty } from './enums'
 import { showReviewTotal, populateUser, recentReviewer } from "./utils";
+import { Country, Price } from './aliases';
 
 const reviews: any[] = [
     {
@@ -36,9 +37,7 @@ const you = {
   stayedAt: [ 'florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-type Country = "United Kingdom" | "United States" | "Spain"
 
-type Price = 45 | 30 | 25
 
 //properties 
 
