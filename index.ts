@@ -97,6 +97,16 @@ isAvailiable: boolean;
 populateUser(you.isReturning, you.firstName);
 showReviewTotal(reviews.length, recentReviewer(reviews).name, recentReviewer(reviews).loyaltyUser);
 
+
+
+function showDetails(authorityStatus: (boolean | Permissions), element: HTMLDivElement, price : number) {
+if(authorityStatus) {
+  const priceDisplay = document.createElement('div')
+  priceDisplay.innerHTML = price.toString() + '/night'
+  element.appendChild(priceDisplay)
+}
+}
+
 //add the properties 
 
 for(let i = 0; i < properties.length; i++) {
@@ -107,6 +117,7 @@ for(let i = 0; i < properties.length; i++) {
   image.setAttribute('src', properties[i].image)
   card.appendChild(image)
   propertyContainer.appendChild(card)
+  showDetails(you.permissions, card, properties[i].price)
 }
 
 
