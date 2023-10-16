@@ -25,7 +25,8 @@ const reviews : {
         name: 'Omar',
         stars: 4,
         loyaltyUser: Loyalty.BRONZE_USER,
-        date: '27-03-2021'
+        date: '27-03-2021',
+        description: "Good location, kind host. Area was a bit quiet."
     },
 ]
 
