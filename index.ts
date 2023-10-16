@@ -36,6 +36,7 @@ const you = {
   stayedAt: [ 'florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
+type Country = "United Kingdom" | "United States" | "Spain"
 
 type Price = 45 | 30 | 25
 
@@ -49,7 +50,7 @@ location : {
   firstLine : string;
   city : string;
   postcode: string;
-  country: string;
+  country: Country;
 }
 contact: [number, string]; 
 isAvailiable: boolean;
