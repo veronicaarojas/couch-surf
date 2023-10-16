@@ -5,7 +5,7 @@ import { Loyalty } from "./enums"
 
 export function showReviewTotal(value: number, reviewer: string, isLoyalty: Loyalty) : void {
     const iconDisplay = isLoyalty === Loyalty.GOLD_USER ? '⭐' : ''
-    reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + ' ' + iconDisplay
+    reviewTotalDisplay.innerHTML =   value.toString() + "Review " + makeMultiple(value) + '| last reviewed by ' + reviewer + ' ' + iconDisplay
 }
 
 export function recentReviewer(reviews : any) {
@@ -35,8 +35,23 @@ export function populateUser(isReturning : boolean, userName: string ) {
     userNameDisplay.innerHTML = userName
 }
 
-export function makeMultiple(value: number) {
+export function makeMultiple(value: number) : string {
     if (value > 1) {
         return 's'
     } else return ''
+}
+
+export function getTopTwoReviews(reviews : { 
+    name: string; 
+     date: string; 
+     stars: number;
+     loyaltyUser: Loyalty;
+     }[]) : { 
+         name: string; 
+         stars: number; 
+         date: string; 
+         loyaltyUser: Loyalty;
+         }[]  {
+ const sortedReviews = reviews.sort((a, b) => b.stars - a.stars)
+ return sortedReviews.slice(0,2)
 }

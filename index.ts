@@ -1,7 +1,10 @@
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
+const reviewContainer = document.querySelector('.reviews')
+const container = document.querySelector('.container')
+const button = document.querySelector('button')
 import { Permissions, Loyalty } from './enums'
-import { showReviewTotal, populateUser, recentReviewer, showDetails } from "./utils";
+import { showReviewTotal, populateUser, recentReviewer, showDetails, getTopTwoReviews } from "./utils";
 import { Country, Price } from './aliases';
 
 const reviews: any[] = [
@@ -115,6 +118,28 @@ for(let i = 0; i < properties.length; i++) {
   propertyContainer.appendChild(card)
   showDetails(you.permissions, card, properties[i].price)
 }
+
+let count = 0
+function addReviews(array: {
+    name: string;
+    stars: number;
+    loyaltyUser: Loyalty;
+    date: string;
+}[]) : void {
+    if (!count ) {
+        count++
+        const topTwo = getTopTwoReviews(array)
+        for (let i = 0; i < topTwo.length; i++) {
+            const card = document.createElement('div')
+            card.classList.add('review-card')
+            card.innerHTML = topTwo[i].stars + ' stars from ' + topTwo[i].name
+            reviewContainer.appendChild(card)
+        }
+        container.removeChild(button) 
+    }
+}
+
+button.addEventListener('click', () => addReviews(reviews))
 
 
 let currentLocation : [string, string, number] = [ "London", '17:47', 18 ]
