@@ -127,16 +127,6 @@ button.addEventListener('click', () => addReviews(reviews))
 let currentLocation : [string, string, number] = [ "London", '17:47', 18 ]
 footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°C'
 
-// class Car {
-//   make: string;
-//   year: number;
-//   color: string;
-//   constructor(make: string, year: number, color: string) {
-//     this.make = make
-//     this.year = year
-//     this.color = color
-//   }
-// }
 
 
 class MainImage {
