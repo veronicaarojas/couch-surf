@@ -3,12 +3,7 @@ const footer = document.querySelector('.footer')
 import { Permissions, Loyalty } from './enums'
 import { showReviewTotal, populateUser, recentReviewer } from "./utils";
 
-const reviews : {
-  name: string;
-  stars: number;
-  loyaltyUser: Loyalty;
-  date: string
-}[] = [
+const reviews: any[] = [
     {
         name: 'Sheia',
         stars: 5,
