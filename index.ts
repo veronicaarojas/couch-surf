@@ -37,12 +37,14 @@ const you = {
 }
 
 
+type Price = 45 | 30 | 25
+
 //properties 
 
 const properties : {
 image : string;
 title : string;
-price : number;
+price : Price;
 location : {
   firstLine : string;
   city : string;
@@ -55,7 +57,7 @@ isAvailiable: boolean;
   {
     image: "",
     title : "London Flat",
-    price: 17,
+    price: 45,
     location: {
       firstLine: "New Street",
       city: "London",
@@ -68,7 +70,7 @@ isAvailiable: boolean;
   {
     image: "",
     title : "Marbella Apartment",
-    price: 20,
+    price: 30,
     location: {
       firstLine: "Main Road",
       city: "Marbella",
@@ -81,7 +83,7 @@ isAvailiable: boolean;
   {
     image: "",
     title : "New York Penthouse",
-    price: 30,
+    price: 45,
     location: {
       firstLine: "81st Street",
       city: "New York",
