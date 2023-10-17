@@ -15,7 +15,7 @@ export interface Property {
   location : {
   firstLine : string;
   city : string;
-  postcode: string;
+  postcode: string | string;
   country: Country;
 }
 contact: [number, string]; 
